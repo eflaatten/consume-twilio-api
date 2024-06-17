@@ -1,0 +1,19 @@
+{
+  "title": "Twilio Message",
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "string",
+      "description": "The body of the message."
+    },
+    "from": {
+      "type": "string",
+      "description": "The phone number the message is sent from."
+    },
+    "to": {
+      "type": "string",
+      "description": "The phone number the message is sent to."
+    }
+  },
+  "required": ["body", "from", "to"]
+}
