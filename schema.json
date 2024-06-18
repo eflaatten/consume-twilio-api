@@ -1,19 +1,74 @@
 {
-  "title": "Twilio Message",
-  "type": "object",
-  "properties": {
-    "body": {
-      "type": "string",
-      "description": "The body of the message."
-    },
-    "from": {
-      "type": "string",
-      "description": "The phone number the message is sent from."
-    },
-    "to": {
-      "type": "string",
-      "description": "The phone number the message is sent to."
-    }
-  },
-  "required": ["body", "from", "to"]
+    "type": "customnodes",
+    "key": "Twilio",
+    "componentId": "twilio",
+    "name": "Twilio",
+    "customFunctions": [
+
+    ],
+    "customAPIs": [
+
+    ],
+    "actions": [
+        {
+            "actionId": "sendSMS",
+            "name": "Send SMS",
+            "isCompleted": false,
+            "variables": [
+
+            ],
+            "actionArguments": {
+                "functionName": "sendSMS",
+                "functionParameters": [
+                    "username",
+                    "password",
+                    "phoneNumber",
+                    "fromPhoneNumber",
+                    "body"
+                ]
+            },
+            "dataInsideAction": [
+                {
+                    "groupname": "SMS",
+                    "field": "body",
+                    "label": "Text Body",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": "Test message from Twilio!"
+                },
+                {
+                    "groupname": "SMS",
+                    "field": "phoneNumber",
+                    "label": "Phone Number",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": ""
+                },
+                {
+                    "groupname": "SMS",
+                    "field": "fromPhoneNumber",
+                    "label": "From Phone Number",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": ""
+                },
+                {
+                    "groupname": "SMS",
+                    "field": "username",
+                    "label": "Username",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": ""
+                },
+                {
+                    "groupname": "SMS",
+                    "field": "password",
+                    "label": "Password",
+                    "type": "password",
+                    "placeholder": "",
+                    "value": ""
+                }
+            ]
+        }
+    ]
 }
