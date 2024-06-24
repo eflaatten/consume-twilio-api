@@ -9,20 +9,21 @@
     "customAPIs": [
 
     ],
+    "payloadable": true,
     "actions": [
         {
             "actionId": "sendSMS",
             "name": "Send SMS",
             "isCompleted": false,
             "variables": [
-
+                {"name": "body", "description": "Text body of the SMS message.", "defaultvalue": ""},
+                {"name": "toPhoneNumber", "description": "Phone number to send the SMS message to.", "defaultvalue": ""},
+                {"name": "fromPhoneNumber", "description": "Phone number the SMS message will send from", "defaultvalue": ""}
             ],
             "actionArguments": {
                 "functionName": "sendSMS",
                 "functionParameters": [
-                    "username",
-                    "password",
-                    "phoneNumber",
+                    "toPhoneNumber",
                     "fromPhoneNumber",
                     "body"
                 ]
@@ -31,41 +32,25 @@
                 {
                     "groupname": "SMS",
                     "field": "body",
-                    "label": "Text Body",
+                    "label": "SMS Message",
                     "type": "text",
                     "placeholder": "",
-                    "value": "Test message from Twilio!"
+                    "value": "Test message with Twilio from CXFabric."
                 },
                 {
                     "groupname": "SMS",
-                    "field": "phoneNumber",
-                    "label": "Phone Number",
+                    "field": "toPhoneNumber",
+                    "label": "To",
                     "type": "text",
-                    "placeholder": "",
+                    "placeholder": "+18777804236",
                     "value": ""
                 },
                 {
                     "groupname": "SMS",
                     "field": "fromPhoneNumber",
-                    "label": "From Phone Number",
+                    "label": "From",
                     "type": "text",
-                    "placeholder": "",
-                    "value": ""
-                },
-                {
-                    "groupname": "SMS",
-                    "field": "username",
-                    "label": "Username",
-                    "type": "text",
-                    "placeholder": "",
-                    "value": ""
-                },
-                {
-                    "groupname": "SMS",
-                    "field": "password",
-                    "label": "Password",
-                    "type": "password",
-                    "placeholder": "",
+                    "placeholder": "+18445141385",
                     "value": ""
                 }
             ]
