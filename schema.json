@@ -13,9 +13,11 @@
     "actions": [
         {
             "actionId": "sendSMS",
-            "name": "Send SMS",
+            "actionName": "Send SMS",
             "isCompleted": false,
             "variables": [
+                {"name": "accountSid", "description": "Twilio account SID.", "defaultvalue": ""},
+                {"name": "authToken", "description": "Twilio auth token.", "defaultvalue": ""},
                 {"name": "body", "description": "Text body of the SMS message.", "defaultvalue": ""},
                 {"name": "toPhoneNumber", "description": "Phone number to send the SMS message to.", "defaultvalue": ""},
                 {"name": "fromPhoneNumber", "description": "Phone number the SMS message will send from", "defaultvalue": ""}
@@ -23,6 +25,8 @@
             "actionArguments": {
                 "functionName": "sendSMS",
                 "functionParameters": [
+                    "accountSid",
+                    "authToken",
                     "toPhoneNumber",
                     "fromPhoneNumber",
                     "body"
@@ -31,27 +35,47 @@
             "dataInsideAction": [
                 {
                     "groupname": "SMS",
-                    "field": "body",
-                    "label": "SMS Message",
+                    "field": "accountSid",
+                    "label": "accountSid",
                     "type": "text",
                     "placeholder": "",
-                    "value": "Test message with Twilio from CXFabric."
+                    "value": ""
                 },
+
+                {
+                    "groupname": "SMS",
+                    "field": "authToken",
+                    "label": "authToken",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": ""
+                },
+
                 {
                     "groupname": "SMS",
                     "field": "toPhoneNumber",
-                    "label": "To",
+                    "label": "To phone number",
                     "type": "text",
                     "placeholder": "+18777804236",
                     "value": ""
                 },
+
                 {
                     "groupname": "SMS",
                     "field": "fromPhoneNumber",
-                    "label": "From",
+                    "label": "From phone number",
                     "type": "text",
                     "placeholder": "+18445141385",
                     "value": ""
+                },
+
+                {
+                    "groupname": "SMS",
+                    "field": "body",
+                    "label": "Message",
+                    "type": "text",
+                    "placeholder": "",
+                    "value": "Test message..."
                 }
             ]
         }
